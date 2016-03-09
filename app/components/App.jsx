@@ -19,7 +19,7 @@ export default class App extends React.Component {
         		notes: () => NoteStore.getState().notes
         	}}
         >
-        	Notes onEdit={this.editNote} onDelete={this.deleteNote} />
+        	<Notes onEdit={this.editNote} onDelete={this.deleteNote} />
         </AltContainer>
       </div>
     );
