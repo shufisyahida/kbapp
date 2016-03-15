@@ -8,10 +8,10 @@ import LaneStore from '../stores/LaneStore';
 export default class App extends React.Component {
 
   render() {
-
+    console.log(LaneStore.getState().lanes);
     return (
-      <div>
-        <button className="add-note" onClick={this.addNote}>+</button>
+      <div> 
+        <button className="add-lane" onClick={this.addLane}>+</button>
         <AltContainer
           stores={[LaneStore]}
           inject={{
