@@ -6,14 +6,28 @@ import NoteStore from '../stores/NoteStore';
 import LaneActions from '../actions/LaneActions';
 import Editable from './Editable.jsx';
 
-import {DropTarget} from 'react-dnd';
+import {DragSource, DropTarget} from 'react-dnd';
 import ItemTypes from '../constants/itemTypes';
+
+const laneSource = {
+  beginDrag(props) {
+    console.log("begin drag lane", props);
+    return {
+    };
+  }
+};
+
+const laneTarget = {
+  hover(targetProps, monitor) {
+    const sourceProps = monitor.getItem();
+    console.log('dragging lane', sourceProps, targetProps);
+  }
+};
 
 const noteTarget = {
   hover(targetProps, monitor) {
     const sourceProps = monitor.getItem();
     const sourceId = sourceProps.id;
-    
     if(!targetProps.lane.notes.length) {
       LaneActions.attachToLane({
         laneId: targetProps.lane.id,
@@ -23,15 +37,20 @@ const noteTarget = {
   }
 };
 
-
+@DragSource(ItemTypes.LANE, laneSource, (connect, monitor) => ({
+  connectDragSource: connect.dragSource()
+}))
+@DropTarget(ItemTypes.LANE, laneTarget, (connect) => ({
+  connectDropTarget: connect.dropTarget()
+}))
 @DropTarget(ItemTypes.NOTE, noteTarget, (connect) => ({
   connectDropTarget: connect.dropTarget()
 }))
 export default class Lane extends React.Component {
   render() {
-    const {connectDropTarget, lane, ...props} = this.props;
+    const {connectDragSource, connectDropTarget, lane, id, onMove, ...props} = this.props;
 
-    return connectDropTarget(
+    return connectDragSource(connectDropTarget(
       <div {...props}>
         <div className="lane-header" onClick={this.activateLaneEdit}>
           <div className="lane-add-note">
@@ -55,8 +74,9 @@ export default class Lane extends React.Component {
             onDelete={this.deleteNote} />
         </AltContainer>
       </div>
-    );
+    ));
   }
+  
   editNote(id, task) {
     // Don't modify if trying set an empty value
     if(!task.trim()) {
