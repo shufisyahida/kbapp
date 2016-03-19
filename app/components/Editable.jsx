@@ -30,7 +30,7 @@ export default class Editable extends React.Component {
     // React lifecycle hooks.
     return <input type="text"
       ref={
-        (e) => e ? e.selectionStart = this.props.task.length : null
+        (e) => e ? e.selectionStart = this.props.value.length : null
       }
       autoFocus={true}
       defaultValue={this.props.value}

@@ -19,9 +19,10 @@ const noteTarget = {
     const sourceProps = monitor.getItem();
     const targetId = targetProps.id;
     const sourceId = sourceProps.id;
+    const itemType = ItemTypes.NOTE;
 
     if(sourceId !== targetId) {
-      targetProps.onMove({sourceId, targetId});
+      targetProps.onMove({sourceId, targetId, itemType});
     }
   }
 };

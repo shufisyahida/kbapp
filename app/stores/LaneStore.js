@@ -71,23 +71,36 @@ class LaneStore {
     this.setState({lanes});
   }
 
-  move({sourceId, targetId}) {
+  move({sourceId, targetId, itemType}) {
     const lanes = this.lanes;
-    const sourceLane = lanes.filter(lane => lane.notes.includes(sourceId))[0];
-    const targetLane = lanes.filter(lane => lane.notes.includes(targetId))[0];
-    const sourceNoteIndex = sourceLane.notes.indexOf(sourceId);
-    const targetNoteIndex = targetLane.notes.indexOf(targetId);
+    
+    if(itemType === 'note') {
+      const sourceLane = lanes.filter(lane => lane.notes.includes(sourceId))[0];
+      const targetLane = lanes.filter(lane => lane.notes.includes(targetId))[0];    
+      const sourceNoteIndex = sourceLane.notes.indexOf(sourceId);
+      const targetNoteIndex = targetLane.notes.indexOf(targetId);
 
-    if(sourceLane === targetLane) {
-      sourceLane.notes = update(sourceLane.notes, {
-        $splice: [
-          [sourceNoteIndex, 1],
-          [targetNoteIndex, 0, sourceId]
-        ]
-      });
-    } else {
-      sourceLane.notes.splice(sourceNoteIndex, 1);
-      targetLane.notes.splice(targetNoteIndex, 0, sourceId);
+      if(sourceLane === targetLane) {
+        sourceLane.notes = update(sourceLane.notes, {
+          $splice: [
+            [sourceNoteIndex, 1],
+            [targetNoteIndex, 0, sourceId]
+          ]
+        });
+      } else {
+        sourceLane.notes.splice(sourceNoteIndex, 1);
+        targetLane.notes.splice(targetNoteIndex, 0, sourceId);
+      }
+    }
+
+      
+    if(itemType === 'lane') {
+      const sourceLaneIndex = lanes.findIndex(lane => lane.id === sourceId ? true : false);
+      const targetLaneIndex = lanes.findIndex(lane => lane.id === targetId ? true : false);
+      const sourceLane = lanes.filter(lane => lane.id === sourceId)[0];
+
+      lanes.splice(sourceLaneIndex, 1);
+      lanes.splice(targetLaneIndex, 0, sourceLane);
     }
 
     this.setState({lanes});

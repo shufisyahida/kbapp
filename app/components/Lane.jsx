@@ -11,8 +11,8 @@ import ItemTypes from '../constants/itemTypes';
 
 const laneSource = {
   beginDrag(props) {
-    console.log("begin drag lane", props);
     return {
+      id: props.id
     };
   }
 };
@@ -20,7 +20,13 @@ const laneSource = {
 const laneTarget = {
   hover(targetProps, monitor) {
     const sourceProps = monitor.getItem();
-    console.log('dragging lane', sourceProps, targetProps);
+    const targetId = targetProps.id;
+    const sourceId = sourceProps.id;
+    const itemType = ItemTypes.LANE;
+    
+    if(sourceId !== targetId) {
+      targetProps.onMove({sourceId, targetId, itemType});
+    }
   }
 };
 
@@ -41,16 +47,16 @@ const noteTarget = {
   connectDragSource: connect.dragSource()
 }))
 @DropTarget(ItemTypes.LANE, laneTarget, (connect) => ({
-  connectDropTarget: connect.dropTarget()
+  connectLaneDropTarget: connect.dropTarget()
 }))
 @DropTarget(ItemTypes.NOTE, noteTarget, (connect) => ({
-  connectDropTarget: connect.dropTarget()
+  connectNoteDropTarget: connect.dropTarget()
 }))
 export default class Lane extends React.Component {
   render() {
-    const {connectDragSource, connectDropTarget, lane, id, onMove, ...props} = this.props;
+    const {connectDragSource, connectLaneDropTarget, connectNoteDropTarget, lane, id, onMove, ...props} = this.props;
 
-    return connectDragSource(connectDropTarget(
+    return connectDragSource(connectNoteDropTarget(connectLaneDropTarget(
       <div {...props}>
         <div className="lane-header" onClick={this.activateLaneEdit}>
           <div className="lane-add-note">
@@ -74,7 +80,7 @@ export default class Lane extends React.Component {
             onDelete={this.deleteNote} />
         </AltContainer>
       </div>
-    ));
+    )));
   }
   
   editNote(id, task) {
