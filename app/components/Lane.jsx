@@ -13,7 +13,7 @@ const noteTarget = {
   hover(targetProps, monitor) {
     const sourceProps = monitor.getItem();
     const sourceId = sourceProps.id;
-    console.log(targetProps.lane.notes.length);
+    
     if(!targetProps.lane.notes.length) {
       LaneActions.attachToLane({
         laneId: targetProps.lane.id,
