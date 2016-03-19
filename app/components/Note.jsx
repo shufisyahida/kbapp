@@ -5,19 +5,23 @@ import ItemTypes from '../constants/itemTypes';
 
 const noteSource = {
   beginDrag(props) {
-    console.log('begin dragging note', props);
-
-    return {};
+    return {
+      id: props.id
+    };
   }
 };
 
 const noteTarget = {
   hover(targetProps, monitor) {
-    console.log('dragging note', sourceProps, targetProps);
+    const sourceProps = monitor.getItem();
+    const targetId = targetProps.id;
+    const sourceId = sourceProps.id;
+
+    if(sourceId !== targetId) {
+      targetProps.onMove({sourceId, targetId});
+    }
   }
 };
-
-
 
 @DropTarget(ItemTypes.NOTE, noteTarget, (connect) => ({
   connectDropTarget: connect.dropTarget()
