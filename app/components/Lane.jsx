@@ -14,6 +14,9 @@ const laneSource = {
     return {
       id: props.id
     };
+  },
+  isDragging(props, monitor) {
+    return props.id === monitor.getItem().id;
   }
 };
 
@@ -44,7 +47,8 @@ const noteTarget = {
 };
 
 @DragSource(ItemTypes.LANE, laneSource, (connect, monitor) => ({
-  connectDragSource: connect.dragSource()
+  connectDragSource: connect.dragSource(),
+  isDragging: monitor.isDragging()
 }))
 @DropTarget(ItemTypes.LANE, laneTarget, (connect) => ({
   connectLaneDropTarget: connect.dropTarget()
@@ -54,10 +58,10 @@ const noteTarget = {
 }))
 export default class Lane extends React.Component {
   render() {
-    const {connectDragSource, connectLaneDropTarget, connectNoteDropTarget, lane, id, onMove, ...props} = this.props;
-
+    const {connectDragSource, connectLaneDropTarget, connectNoteDropTarget, lane, id, onMove, isDragging, ...props} = this.props;
+    
     return connectDragSource(connectNoteDropTarget(connectLaneDropTarget(
-      <div {...props}>
+      <div style={{visibility: isDragging ? 'hidden' : 'visible'}} {...props}>
         <div className="lane-header" onClick={this.activateLaneEdit}>
           <div className="lane-add-note">
             <button onClick={this.addNote}>+</button>
