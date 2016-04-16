@@ -1,0 +1,26 @@
+.margin-register > .col-md-12 > .btn{
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
+.panel-register{
+	 border: none !important; 
+	 outline: none !important;
+	 margin-top: 20px;
+}
+
+.panel.panel-register{
+	background-color: rgba(255,255,255,0.8) !important;
+	border-radius: 6px !important;
+}
+
+.panel-heading.heading-register{
+	border-top-left-radius: 6px !important;
+	border-top-right-radius: 6px !important;
+}
+
+.heading-register > .panel-title{
+	font-size: 24px !important;
+	text-align: center;
+	margin: 10px 0px;
+}

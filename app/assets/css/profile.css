@@ -1,0 +1,281 @@
+.nav.profilepage{
+	height: 60px;
+	background-image: url('../img/meetchangeicon.png');
+	background-size: 35px 35px;
+	background-repeat: no-repeat;
+    background-position: left 80px center;
+    box-shadow: 0px 2px 15px rgba(255,255,255,0.15);
+	-moz-box-shadow: 0px 2px 15px rgba(255,255,255,0.15); 
+	-webkit-box-shadow: 0px 2px 15px rgba(255,255,255,0.15); 
+	/*position: fixed;*/
+	z-index: 10;
+}
+
+.nav.subnav{
+	height: 45px;
+}
+
+.subnav a{
+	font-weight: bold;
+	color: #514444 !important;
+}
+
+.form-search{
+	margin-top: 13px;
+}
+
+.subnav > div > .navbar-nav > li > a {
+    padding-top: 12px !important;
+    padding-bottom: 13px !important;
+    margin-top: -2px;
+}
+
+.subnav > div > .navbar-nav > li > a:hover{
+	background-color: #c6bba2 !important;
+}
+
+.ppmenu > div > .nav > li > a{
+	padding: 10px 25px;
+	font-family: GothamRounded-Medium;
+}
+
+ul.nav li.active, ul.nav li a:hover {
+    background-color: #514444;
+}
+
+ul.nav li.active a, ul.nav li a:hover {
+    color: #ffffff;
+}
+
+ul.nav li a {
+    color: #514444;;
+}
+
+.profile-photo{
+	border: 10px solid #ffffff;
+	position: relative;
+	margin-top: -160px;
+}
+
+.ppmenu .col-md-8{
+	margin-left: -84px;
+}
+
+.profile-name{
+	position: relative;
+	margin-top: -80px;
+	margin-left: 20px;
+}
+
+.profile-name.sz32{
+	font-family: GothamRounded-Medium;
+}
+
+.profile-name.sz20{
+	font-family: ProximaNovaReg;
+}
+
+.section{
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+
+.section.cover{
+	background-image: url('../img/bg.jpg');
+	background-repeat:no-repeat;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	/*background-position:center;*/
+	/*margin-top: 95px;*/
+	height: 300px;
+	-webkit-box-shadow: inset 0px -200px 73px -100px rgba(0,0,0,0.65);
+	-moz-box-shadow: inset 0px -200px 73px -100px rgba(0,0,0,0.65);
+	box-shadow: inset 0px -200px 73px -100px rgba(0,0,0,0.65);
+}
+
+.content-box{
+	border-radius: 8px;
+	border: 1px solid #9c9587;
+	height: auto;
+	padding: 10px;
+	margin: 20px 0px;
+} 
+
+.content-panel.panel{
+	border-radius: 8px;
+	border: 1px solid #9c9587;
+	margin: 15px 0px;
+}
+
+.content-panel > .panel-heading{
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	/*border-bottom: none;*/
+}
+
+.panel-body > div > a{
+	color: #352b20;
+}
+
+.panel-body > div > a:hover, .news > span > a, .agenda-list > div > div > div > a:hover {
+	color: #ff7f50;
+	text-decoration: none;
+}
+
+.agenda-list > div > div > div > a{
+	color: #352b20;
+}
+
+.news > span > a:hover{
+	font-weight: bold;
+}
+
+.news{
+	padding: 0px 15px;
+}
+
+.panel-list div{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.panel-list > div:first-child {
+    margin-top: -7px;
+}
+
+.panel-body.panel-list{
+	margin-bottom: -15px;
+	margin-top: -5px;
+}
+
+.panel-list-noborder div{
+	margin-top: 7px;
+}
+
+.panel-list-noborder > div:first-child {
+    margin-top: -7px;
+}
+
+.panel-body.panel-list-noborder{
+	padding-bottom: -8px;
+}
+
+.panel-list > div:not(:first-child) {
+    border-top: 1px solid #ddd;
+    margin-bottom: 7px;
+}
+
+.agenda-list > div:not(:first-child){
+	border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+.agenda-list > div{
+	padding-bottom: 15px;
+}
+
+
+img.float-left{
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.square{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	margin-left: 15px;
+	margin-bottom: 15px;
+}
+
+.square-text{
+	position: relative;
+	line-height: 18px;
+	text-align: center;
+	margin-left: 20px;
+	margin-top: 7px;
+	margin-bottom: 15px;
+}
+
+.bigpanel-heading{
+	font-family: GothamRounded-Medium;
+	font-size: 20px;
+	margin: 15px;
+	margin-bottom: 0px;
+}
+
+.add-attachments{
+	margin: 20px 0px;
+}
+
+.btn-3{
+	background-color: #ddd;
+	border-radius: 6px;
+	padding: 2px 8px;
+	text-align: center;
+	font-size: 13px;
+}
+
+.btn-3:hover{
+	background-color: #49b979;
+	color: #fff;
+}
+
+.btn-3.org{
+	background-color: #ff7f50;
+	color: #fff;
+}
+
+.btn-3.org:hover{
+/*	background-color: #514444;
+	color: #fff;*/
+	color:  #514444;
+}
+
+.btn > i{
+	margin-left: -20px;
+}
+
+.btn > span{
+	vertical-align: super;
+}
+
+.add-attachments-expand{
+	height: 125px;
+}
+
+.add-attachments-expand > div{
+	padding: 15px;
+}
+
+.add-attachments-expand > div:not(:first-child) {
+    padding-top: 0px;
+}
+
+.add-attachments-expand > .row > .col-md-2{
+	margin-top: 5px;
+}
+
+.btn-1{
+	background-color: #ff7f50;
+	color: #fff;
+	border-radius: 6px;
+	padding: 7px 20px;
+	text-align: center;
+	font-size: 13px;
+}
+
+.btn-2{
+	background-color: #c6bba2;
+	color: #fff;
+	border-radius: 6px;
+	padding: 7px 20px;
+	text-align: center;
+	font-size: 13px;
+}
+
+.panel-body-expand{
+	padding-bottom: 25px;
+}
