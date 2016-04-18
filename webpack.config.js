@@ -37,14 +37,31 @@ const common = {
 				include: PATHS.app
 			},
 			{
-				test   : /\.(jpe?g|png|gif|ico|ttf|eot|otf|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-				loader : 'file-loader',
+				test: /\.(png|jpg|jpeg|gif|svg)$/,
+				loaders: ['url-loader?limit=10000!img?progressive=true'],
 				include: PATHS.app
 			},
 			{
-				test   : /\.(ttf|eot|otf|svg|woff(2)?|jpe?g|png|gif|ico)$/,
-				loader : 'url?limit=10000',
+				test: /\.(woff|woff2|otf)$/,
+				loaders: ['url-loader?limit=100000'],
 				include: PATHS.app
+			},
+			{
+				test: /\.(ttf|eot|otf)$/,
+				loaders: ['file-loader'],
+				include: PATHS.app
+			},
+			{
+				test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				loaders: ['url-loader?limit=10000&mimetype=application/font-woff']
+			},
+			{
+				test: /\.otf?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				loaders: ['url-loader?limit=10000&mimetype=application/x-font-woff']
+			},
+			{
+				test: /\.(otf|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				loaders: ['file-loader']
 			}
 		]
 	}

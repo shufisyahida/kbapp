@@ -4,6 +4,12 @@ import '../../assets/css/homepage.css';
 import '../../assets/css/homepage-login.css';
 import '../../assets/css/homepage-register.css';
 import '../../assets/css/search.css';
+import img_who1 from '../../assets/img/who1.png';
+import img_who2 from '../../assets/img/who2.png';
+import img_who3 from '../../assets/img/who3.png';
+import img_why1 from'../../assets/img/why1.png';
+import img_why2 from '../../assets/img/why2.png';
+import img_why3 from'../../assets/img/why3.png';
 
 export default React.createClass({
 	render() {
@@ -73,17 +79,17 @@ export default React.createClass({
 					<div className="row">
 						<div className="col-md-10 col-md-offset-1">
 							<div className="col-md-4">
-								<img className="resize-h-200 center-block" src="../../assets/img/why1.png"/>
+								<img className="resize-h-200 center-block" src={img_why1}/>
 								<h1 className="h1 homepage brown">Kolaborasi dengan <br/>Siapa Saja</h1>
 								<div className="why desc brown">Pilih mitra kolaborasi terpercaya sesuai dengan kebutuhan inisiatif <br/> dan program non-profit Anda</div>
 							</div>
 							<div className="col-md-4">
-								<img className="resize-h-200 center-block" src="../../assets/img/why2.png"/>
+								<img className="resize-h-200 center-block" src={img_why2}/>
 								<h1 className="h1 homepage brown">Kesempatan Pendanaan Tak Terbatas</h1>
 								<div className="why desc brown">Temukan mitra pendanaan yang menyediakan hibah triliunan rupiah dari seluruh Indonesia</div>
 							</div>
 							<div className="col-md-4">
-								<img className="resize-h-200 center-block" src="../../assets/img/why3.png"/>
+								<img className="resize-h-200 center-block" src={img_why3}/>
 								<h1 className="h1 homepage brown">Bangun Sustainability Brand Anda</h1>
 								<div className="why desc brown">Dapatkan kepercayaan dari pelaku sektor publik lainnya dengan kapabilitas dan inisiatif yang telah Anda lakukan</div>
 							</div>
@@ -99,7 +105,7 @@ export default React.createClass({
 												<div className="form-group form-group-lg">
 													<div className="col-md-8 col-md-offset-2 input-group big-search">
 														<input className="form-control" type="text" placeholder="Ketik pencarian..." />
-														<span className="input-group-addon"><i className="fa fa-search"></i></span>
+														<span className="input-group-addon"><i class="fa fa-search"></i></span>
 													</div>
 												</div>
 										</form>
@@ -118,7 +124,7 @@ export default React.createClass({
 						<h1 className="h1 homepage who brown">Belum menemukan peran yang cocok untuk Anda?</h1>
 						<div className="row">
 							<div className="col-md-3">
-								<img className="resize-w-200 center-block" src="../../assets/img/who1.png"/>
+								<img className="resize-w-200 center-block" src={img_who1}/>
 							</div>
 							<div className="col-md-8 who middle">
 								<h1 className="h1 homepage who orange">Jadilah Inovator</h1>
@@ -131,12 +137,12 @@ export default React.createClass({
 								<div className="who desc right brown">Temukan proyek dan organisasi yang sesuai dengan minat dan kapasitas Anda. Bantu dan nikmati sensasi meninggalkan jejak kebaikan di dunia!</div>
 							</div>
 							<div className="col-md-3">
-								<img className="resize-w-200 center-block" src="../../assets/img/who2.png"/>
+								<img className="resize-w-200 center-block" src={img_who2}/>
 							</div>
 						</div>
 						<div className="row">
 							<div className="col-md-3">
-								<img className="resize-w-200 center-block" src="../../assets/img/who3.png"/>
+								<img className="resize-w-200 center-block" src={img_who3}/>
 							</div>
 							<div className="col-md-8 who middle">
 								<h1 className="h1 homepage who orange">Investor, Katalis Perubahan</h1>
