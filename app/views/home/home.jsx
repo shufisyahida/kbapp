@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Register from '../../components/register/register.jsx';
+
 import '../../assets/css/homepage.css';
 import '../../assets/css/homepage-login.css';
 import '../../assets/css/homepage-register.css';
@@ -11,7 +13,7 @@ import img_why1 from'../../assets/img/why1.png';
 import img_why2 from '../../assets/img/why2.png';
 import img_why3 from'../../assets/img/why3.png';
 
-export default React.createClass({
+export default class Home extends React.Component {
 	render() {
 		return(
 			<div className="container-fluid">
@@ -45,31 +47,7 @@ export default React.createClass({
 									<h1 className="panel-title h1 homepage white">Mari Bergabung!</h1>
 								</div>
 								<div className="panel-body">
-									<form role="form" className="form-group margin-register">
-										<div className="col-md-6">
-											<label className="control-label brown">Nama Depan</label>
-											<input className="form-control form-group" type="text" required />
-										</div>
-										<div className="col-md-6">
-											<label className="control-label brown">Nama Belakang</label>
-											<input className="form-control form-group" type="text" required />
-										</div>
-										<div className="col-md-12">
-											<label className="control-label brown">E-mail</label>
-											<input className="form-control form-group" type="email" required />
-										</div>
-										<div className="col-md-12">
-											<label className="control-label brown">Password</label>
-											<input className="form-control form-group" type="password" required />
-										</div>
-										<div className="col-md-12">
-											<label className="control-label brown">Konfirmasi Password</label>
-											<input className="form-control form-group" type="password" required />
-										</div>
-										<div className="col-md-12">
-											<button className="btn bg-orange white col-md-12" type="submit">DAFTAR</button>
-										</div>
-									</form>
+									<Register />
 								</div>
 							</div>
 						</div>
@@ -170,4 +148,4 @@ export default React.createClass({
 			</div>
 		)
 	}
-})
+}

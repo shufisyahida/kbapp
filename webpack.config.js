@@ -70,6 +70,9 @@ const common = {
 if(TARGET === 'start' || !TARGET) {
 	module.exports = merge(common, {
 		devtool: 'eval-source-map',
+		node: {
+			__dirname: true
+		},
 		devServer: {
 			contentBase: PATHS.build,
 
@@ -98,6 +101,9 @@ if(TARGET === 'start' || !TARGET) {
 			new webpack.HotModuleReplacementPlugin(),
 			new NpmInstallPlugin({
 				save: true
+			}),
+			new webpack.DefinePlugin({ 
+				"global.GENTLY": false
 			})
 		]
 	});

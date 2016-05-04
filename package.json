@@ -32,6 +32,8 @@
     "alt": "^0.18.2",
     "alt-container": "^1.0.2",
     "alt-utils": "^1.0.0",
+    "bluebird": "^3.3.5",
+    "jquery": "^2.2.3",
     "node-uuid": "^1.4.7",
     "react": "^0.14.7",
     "react-addons-update": "^0.14.7",
